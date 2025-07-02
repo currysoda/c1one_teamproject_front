@@ -23,7 +23,8 @@ export default tseslint.config(
         "warn",
         { allowConstantExport: true },
       ],
-      "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/no-explicit-any": "off",    // any 사용 허용
+        "@typescript-eslint/explicit-module-boundary-types": "off" // 함수 리턴 타입 생략 허용
     },
   }
 );

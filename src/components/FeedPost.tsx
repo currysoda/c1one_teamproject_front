@@ -1,6 +1,6 @@
-
 import React, { useState } from 'react';
 import { Heart, MessageSquare, Plus, MoreHorizontal } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 interface Post {
   id: number;
@@ -20,6 +20,11 @@ interface FeedPostProps {
 export const FeedPost: React.FC<FeedPostProps> = ({ post }) => {
   const [liked, setLiked] = useState(false);
   const [saved, setSaved] = useState(false);
+  const navigate = useNavigate();
+
+  const handleCommentClick = () => {
+    navigate(`/post/${post.id}`);
+  };
 
   return (
     <article className="bg-instagram-dark border border-instagram-border rounded-lg overflow-hidden">
@@ -68,7 +73,10 @@ export const FeedPost: React.FC<FeedPostProps> = ({ post }) => {
             >
               <Heart size={24} fill={liked ? 'currentColor' : 'none'} />
             </button>
-            <button className="text-instagram-text hover:text-instagram-muted">
+            <button 
+              onClick={handleCommentClick}
+              className="text-instagram-text hover:text-instagram-muted"
+            >
               <MessageSquare size={24} />
             </button>
             <button className="text-instagram-text hover:text-instagram-muted">

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { ProfileGrid } from './ProfileGrid';
-import { Grid3X3, Play, UserTag } from 'lucide-react';
+import { Grid3X3, Play, User } from 'lucide-react';
 
 export const ProfileTabs = () => {
   const [activeTab, setActiveTab] = useState('posts');
@@ -29,7 +29,7 @@ export const ProfileTabs = () => {
             value="tagged" 
             className="flex items-center gap-2 px-6 py-4 text-instagram-muted data-[state=active]:text-instagram-text data-[state=active]:border-t-2 data-[state=active]:border-instagram-text bg-transparent rounded-none"
           >
-            <UserTag size={12} />
+            <User size={12} />
             <span className="text-xs font-semibold tracking-wider">태그됨</span>
           </TabsTrigger>
         </TabsList>
